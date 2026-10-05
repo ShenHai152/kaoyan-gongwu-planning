@@ -27,6 +27,32 @@
 
 后端暴露 13 个 REST 端点，OpenAPI 文档随仓库提交在 `backend/openapi.json`。
 
+## 界面预览
+
+### 冲稳保分档
+
+按分数把院校分成冲刺 / 稳妥 / 保底三档，并给出你在该专业下的位次：
+
+![冲稳保分档](assets/screenshots/reach-match-safety.png)
+
+### 分数排名
+
+看某个专业下各院校的复试线排序，以及你的分数大概排在第几：
+
+![分数排名](assets/screenshots/ranking.png)
+
+### 专业热榜
+
+按网络热度与竞争热度给 408 相关院校专业排序（覆盖范围仅限已收录院校）：
+
+![专业热榜](assets/screenshots/heat.png)
+
+### AI 择校报告
+
+结合分档、位次与历年数据生成可读的分析报告，未配置密钥时自动回落为模板报告：
+
+![AI 择校报告](assets/screenshots/ai-report.png)
+
 ## 技术栈
 
 - **后端**：Python 3.12+、FastAPI、SQLAlchemy 2、Pydantic v2、python-calamine（读写 Excel）
