@@ -66,8 +66,9 @@
 
 ```bash
 cd backend
-uv sync                     # 或: python -m venv .venv && pip install -e .
-cp ../.env.example ../.env   # 按需填写数据库与 LLM 配置（可留空）
+uv sync                       # 或: python -m venv .venv && pip install -e .
+gunzip -c data/exam.db.gz > exam.db   # 展开随仓库分发的数据（约 46 MB 压缩 / 337 MB 展开）
+cp ../.env.example ../.env     # 按需填写数据库与 LLM 配置（可留空）
 uv run uvicorn app.main:app --reload
 ```
 
@@ -104,12 +105,31 @@ cd frontend && npm run check   # 类型生成 + 类型检查 + 单元测试
 
 ## 数据
 
-后端依赖的原始招录数据（复试线、招生计划、国家线等）**不随本仓库分发**。
-运行完整功能需要自备原始数据并执行 `backend/etl/` 下的加载脚本；
-缺少数据时，相关接口会返回空结果，单元测试仍可全部通过（依赖外部文件的用例会自动跳过）。
+仓库自带一份**可直接查询的 SQLite 数据库** `backend/data/exam.db.gz`（约 46 MB 压缩 / 337 MB 展开）：
+
+| 表 | 行数 | 说明 |
+| --- | --- | --- |
+| `kaoyan_admission_line` | 221,706 | 2017–2026 各院校专业复试线 |
+| `kaoyan_enrollment_plan` | 627,417 | 历年招生计划（招生人数、考试科目等） |
+| `kaoyan_national_line` | 250 | 国家线（含 A/B 区与专项） |
+| `kaoyan_cs408_unit` | 195 | 408 院校专业热度与考情 |
+| `kaoyan_cs408_year_line` / `subject_change` / `conflict` | 426 / 76 / 31 | 408 逐年分数线、改考与口径冲突 |
+
+展开后即可离线使用全部页面与接口：
+
+```bash
+cd backend && gunzip -c data/exam.db.gz > exam.db
+```
+
+数据来自高校公示与招生简章，**已做脱敏**：不含考生名单；招生计划中会夹带导师
+姓名的两个自由文本列（`direction`、`enrollment_note`）在公开副本中置空，其余
+可查询的分数线、招生人数等统计口径保持不变。
+
+若要重新导入原始文件，`backend/etl/` 下的适配器仍可用（需自备原始数据），
+缺少数据时相关接口返回空结果，单元测试会跳过依赖外部文件的用例。
 
 408 相关的第三方整理数据来自 [Laz8Noy/kaoyan408-share](https://github.com/Laz8Noy/kaoyan408-share)
-（CC BY 4.0），本仓库不含其数据文件，仅保留解析与查询逻辑。
+（CC BY 4.0），本仓库仅保留其解析与查询逻辑与已脱敏的派生结果。
 
 ## 免责声明
 
