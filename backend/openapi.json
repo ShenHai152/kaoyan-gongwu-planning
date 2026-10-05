@@ -1,0 +1,3139 @@
+{
+  "components": {
+    "schemas": {
+      "AdmissionLineOut": {
+        "properties": {
+          "degree_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Degree Type"
+          },
+          "department": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Department"
+          },
+          "foreign_language": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Foreign Language"
+          },
+          "is_211": {
+            "title": "Is 211",
+            "type": "boolean"
+          },
+          "is_985": {
+            "title": "Is 985",
+            "type": "boolean"
+          },
+          "is_double_first_class": {
+            "title": "Is Double First Class",
+            "type": "boolean"
+          },
+          "is_self_drawn": {
+            "title": "Is Self Drawn",
+            "type": "boolean"
+          },
+          "political": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Political"
+          },
+          "program_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Program Code"
+          },
+          "program_name": {
+            "title": "Program Name",
+            "type": "string"
+          },
+          "province": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Province"
+          },
+          "school_name": {
+            "title": "School Name",
+            "type": "string"
+          },
+          "source_file": {
+            "title": "Source File",
+            "type": "string"
+          },
+          "subject_one": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subject One"
+          },
+          "subject_two": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subject Two"
+          },
+          "total_delta_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Delta Raw"
+          },
+          "total_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Score"
+          },
+          "website": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Website"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          },
+          "zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Zone"
+          }
+        },
+        "required": [
+          "year",
+          "school_name",
+          "program_name",
+          "program_code",
+          "department",
+          "degree_type",
+          "total_score",
+          "political",
+          "foreign_language",
+          "subject_one",
+          "subject_two",
+          "total_delta_raw",
+          "province",
+          "is_985",
+          "is_211",
+          "is_double_first_class",
+          "zone",
+          "is_self_drawn",
+          "website",
+          "source_file"
+        ],
+        "title": "AdmissionLineOut",
+        "type": "object"
+      },
+      "AiReportDataRefOut": {
+        "properties": {
+          "band": {
+            "title": "Band",
+            "type": "string"
+          },
+          "margin": {
+            "title": "Margin",
+            "type": "number"
+          },
+          "reference_line": {
+            "title": "Reference Line",
+            "type": "number"
+          },
+          "school": {
+            "title": "School",
+            "type": "string"
+          }
+        },
+        "required": [
+          "school",
+          "band",
+          "reference_line",
+          "margin"
+        ],
+        "title": "AiReportDataRefOut",
+        "type": "object"
+      },
+      "AiReportOut": {
+        "properties": {
+          "data_refs": {
+            "items": {
+              "$ref": "#/components/schemas/AiReportDataRefOut"
+            },
+            "title": "Data Refs",
+            "type": "array"
+          },
+          "disclaimer": {
+            "title": "Disclaimer",
+            "type": "string"
+          },
+          "generated_by": {
+            "title": "Generated By",
+            "type": "string"
+          },
+          "sections": {
+            "items": {
+              "$ref": "#/components/schemas/AiReportSectionOut"
+            },
+            "title": "Sections",
+            "type": "array"
+          },
+          "session_id": {
+            "title": "Session Id",
+            "type": "integer"
+          },
+          "style": {
+            "title": "Style",
+            "type": "string"
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          }
+        },
+        "required": [
+          "summary",
+          "sections",
+          "data_refs",
+          "style",
+          "generated_by",
+          "disclaimer",
+          "session_id"
+        ],
+        "title": "AiReportOut",
+        "type": "object"
+      },
+      "AiReportRequest": {
+        "properties": {
+          "is_211": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is 211"
+          },
+          "is_985": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is 985"
+          },
+          "program_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Program Code"
+          },
+          "program_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Program Name"
+          },
+          "province": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Province"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          },
+          "style": {
+            "default": "neutral",
+            "title": "Style",
+            "type": "string"
+          },
+          "window": {
+            "default": 3,
+            "title": "Window",
+            "type": "integer"
+          },
+          "year_to": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year To"
+          },
+          "zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Zone"
+          }
+        },
+        "required": [
+          "score"
+        ],
+        "title": "AiReportRequest",
+        "type": "object"
+      },
+      "AiReportSectionOut": {
+        "properties": {
+          "points": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Points",
+            "type": "array"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "points"
+        ],
+        "title": "AiReportSectionOut",
+        "type": "object"
+      },
+      "Cs408ConflictOut": {
+        "properties": {
+          "action": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Action"
+          },
+          "claims_json": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Claims Json"
+          },
+          "field": {
+            "title": "Field",
+            "type": "string"
+          },
+          "new_value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "New Value"
+          },
+          "old_value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Old Value"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "school_name": {
+            "title": "School Name",
+            "type": "string"
+          },
+          "source_file": {
+            "title": "Source File",
+            "type": "string"
+          },
+          "sources_json": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sources Json"
+          },
+          "status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status"
+          },
+          "unit": {
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "school_name",
+          "field",
+          "unit",
+          "old_value",
+          "new_value",
+          "reason",
+          "status",
+          "action",
+          "claims_json",
+          "sources_json",
+          "source_file"
+        ],
+        "title": "Cs408ConflictOut",
+        "type": "object"
+      },
+      "Cs408SubjectChangeOut": {
+        "properties": {
+          "effective_year": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective Year"
+          },
+          "new_subject": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "New Subject"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note"
+          },
+          "old_subject": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Old Subject"
+          },
+          "school_name": {
+            "title": "School Name",
+            "type": "string"
+          },
+          "scope": {
+            "title": "Scope",
+            "type": "string"
+          },
+          "source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source"
+          },
+          "source_file": {
+            "title": "Source File",
+            "type": "string"
+          },
+          "tier": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tier"
+          }
+        },
+        "required": [
+          "school_name",
+          "tier",
+          "scope",
+          "old_subject",
+          "new_subject",
+          "effective_year",
+          "source",
+          "note",
+          "source_file"
+        ],
+        "title": "Cs408SubjectChangeOut",
+        "type": "object"
+      },
+      "Cs408UnitOut": {
+        "properties": {
+          "admit_avg_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Admit Avg Raw"
+          },
+          "admit_avg_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Admit Avg Value"
+          },
+          "admit_cnt_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Admit Cnt Raw"
+          },
+          "admit_cnt_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Admit Cnt Value"
+          },
+          "admit_max": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Admit Max"
+          },
+          "admit_max_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Admit Max Raw"
+          },
+          "admit_min": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Admit Min"
+          },
+          "admit_min_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Admit Min Raw"
+          },
+          "ai_tag": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ai Tag"
+          },
+          "category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category"
+          },
+          "college": {
+            "title": "College",
+            "type": "string"
+          },
+          "direction": {
+            "title": "Direction",
+            "type": "string"
+          },
+          "fill_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fill Raw"
+          },
+          "heat_comp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Heat Comp"
+          },
+          "heat_net": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Heat Net"
+          },
+          "kaoqing_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Kaoqing Url"
+          },
+          "line2026_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Line2026 Raw"
+          },
+          "line_2026_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Line 2026 Value"
+          },
+          "line_delta_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Line Delta Raw"
+          },
+          "nn_408_avg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nn 408 Avg"
+          },
+          "nn_408_avg_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nn 408 Avg Raw"
+          },
+          "nn_rate_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nn Rate Raw"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note"
+          },
+          "plan2026_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Plan2026 Raw"
+          },
+          "plan2026_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Plan2026 Value"
+          },
+          "province": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Province"
+          },
+          "region": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Region"
+          },
+          "retest_cnt_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retest Cnt Raw"
+          },
+          "retest_cnt_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retest Cnt Value"
+          },
+          "school_name": {
+            "title": "School Name",
+            "type": "string"
+          },
+          "scope": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scope"
+          },
+          "source_file": {
+            "title": "Source File",
+            "type": "string"
+          },
+          "src_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Src Label"
+          },
+          "subject_class": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subject Class"
+          },
+          "tier": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tier"
+          },
+          "wd_count": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wd Count"
+          }
+        },
+        "required": [
+          "school_name",
+          "college",
+          "direction",
+          "category",
+          "province",
+          "region",
+          "tier",
+          "subject_class",
+          "line2026_raw",
+          "line_2026_value",
+          "line_delta_raw",
+          "plan2026_raw",
+          "plan2026_value",
+          "fill_raw",
+          "retest_cnt_raw",
+          "retest_cnt_value",
+          "admit_cnt_raw",
+          "admit_cnt_value",
+          "admit_max_raw",
+          "admit_max",
+          "admit_min_raw",
+          "admit_min",
+          "admit_avg_raw",
+          "admit_avg_value",
+          "heat_net",
+          "heat_comp",
+          "nn_408_avg_raw",
+          "nn_408_avg",
+          "nn_rate_raw",
+          "ai_tag",
+          "scope",
+          "note",
+          "src_label",
+          "kaoqing_url",
+          "wd_count",
+          "source_file"
+        ],
+        "title": "Cs408UnitOut",
+        "type": "object"
+      },
+      "Cs408YearLineOut": {
+        "properties": {
+          "college": {
+            "title": "College",
+            "type": "string"
+          },
+          "direction": {
+            "title": "Direction",
+            "type": "string"
+          },
+          "line_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Line Raw"
+          },
+          "line_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Line Value"
+          },
+          "school_name": {
+            "title": "School Name",
+            "type": "string"
+          },
+          "source_file": {
+            "title": "Source File",
+            "type": "string"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "school_name",
+          "college",
+          "direction",
+          "year",
+          "line_raw",
+          "line_value",
+          "source_file"
+        ],
+        "title": "Cs408YearLineOut",
+        "type": "object"
+      },
+      "EnrollmentPlanOut": {
+        "properties": {
+          "city": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "City"
+          },
+          "degree_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Degree Type"
+          },
+          "department": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Department"
+          },
+          "direction": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Direction"
+          },
+          "enrollment_count": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enrollment Count"
+          },
+          "enrollment_note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enrollment Note"
+          },
+          "enrollment_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enrollment Raw"
+          },
+          "exam_method": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exam Method"
+          },
+          "exam_subjects": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exam Subjects"
+          },
+          "program_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Program Code"
+          },
+          "program_name": {
+            "title": "Program Name",
+            "type": "string"
+          },
+          "province": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Province"
+          },
+          "school_name": {
+            "title": "School Name",
+            "type": "string"
+          },
+          "source_file": {
+            "title": "Source File",
+            "type": "string"
+          },
+          "study_mode": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Study Mode"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          },
+          "zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Zone"
+          }
+        },
+        "required": [
+          "year",
+          "school_name",
+          "program_name",
+          "program_code",
+          "department",
+          "degree_type",
+          "study_mode",
+          "direction",
+          "enrollment_count",
+          "enrollment_raw",
+          "enrollment_note",
+          "exam_method",
+          "exam_subjects",
+          "city",
+          "province",
+          "zone",
+          "source_file"
+        ],
+        "title": "EnrollmentPlanOut",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "HeatRankingOut": {
+        "properties": {
+          "disclaimer": {
+            "title": "Disclaimer",
+            "type": "string"
+          },
+          "excluded_missing": {
+            "title": "Excluded Missing",
+            "type": "integer"
+          },
+          "filters": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "title": "Filters",
+            "type": "object"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/HeatRankingRowOut"
+            },
+            "title": "Rows",
+            "type": "array"
+          },
+          "sort": {
+            "title": "Sort",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sort",
+          "filters",
+          "excluded_missing",
+          "disclaimer",
+          "rows"
+        ],
+        "title": "HeatRankingOut",
+        "type": "object"
+      },
+      "HeatRankingRowOut": {
+        "properties": {
+          "admit_cnt_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Admit Cnt Value"
+          },
+          "college": {
+            "title": "College",
+            "type": "string"
+          },
+          "direction": {
+            "title": "Direction",
+            "type": "string"
+          },
+          "heat_comp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Heat Comp"
+          },
+          "heat_net": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Heat Net"
+          },
+          "line_2026_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Line 2026 Value"
+          },
+          "nn_rate_raw": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nn Rate Raw"
+          },
+          "province": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Province"
+          },
+          "rank": {
+            "title": "Rank",
+            "type": "integer"
+          },
+          "region": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Region"
+          },
+          "school_name": {
+            "title": "School Name",
+            "type": "string"
+          },
+          "source_file": {
+            "title": "Source File",
+            "type": "string"
+          },
+          "src_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Src Label"
+          },
+          "subject_class": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subject Class"
+          },
+          "tier": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tier"
+          },
+          "wd_count": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wd Count"
+          }
+        },
+        "required": [
+          "rank",
+          "school_name",
+          "college",
+          "direction",
+          "subject_class",
+          "province",
+          "region",
+          "tier",
+          "heat_net",
+          "heat_comp",
+          "wd_count",
+          "nn_rate_raw",
+          "line_2026_value",
+          "admit_cnt_value",
+          "src_label",
+          "source_file"
+        ],
+        "title": "HeatRankingRowOut",
+        "type": "object"
+      },
+      "NationalLineOut": {
+        "properties": {
+          "candidate_type": {
+            "title": "Candidate Type",
+            "type": "string"
+          },
+          "category_kind": {
+            "title": "Category Kind",
+            "type": "string"
+          },
+          "retrieved_at": {
+            "title": "Retrieved At",
+            "type": "string"
+          },
+          "single_100": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Single 100"
+          },
+          "single_over100": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Single Over100"
+          },
+          "source_url": {
+            "title": "Source Url",
+            "type": "string"
+          },
+          "subject": {
+            "title": "Subject",
+            "type": "string"
+          },
+          "total_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Score"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "year",
+          "category_kind",
+          "subject",
+          "candidate_type",
+          "total_score",
+          "single_100",
+          "single_over100",
+          "source_url",
+          "retrieved_at"
+        ],
+        "title": "NationalLineOut",
+        "type": "object"
+      },
+      "ProgramOptionOut": {
+        "properties": {
+          "program_code": {
+            "title": "Program Code",
+            "type": "string"
+          },
+          "program_name": {
+            "title": "Program Name",
+            "type": "string"
+          },
+          "school_count": {
+            "title": "School Count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "program_code",
+          "program_name",
+          "school_count"
+        ],
+        "title": "ProgramOptionOut",
+        "type": "object"
+      },
+      "ProgramRankingOut": {
+        "properties": {
+          "disclaimer": {
+            "title": "Disclaimer",
+            "type": "string"
+          },
+          "position": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ScorePositionOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "program_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Program Code"
+          },
+          "program_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Program Name"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/RankingRowOut"
+            },
+            "title": "Rows",
+            "type": "array"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "year",
+          "program_code",
+          "program_name",
+          "disclaimer",
+          "rows",
+          "position"
+        ],
+        "title": "ProgramRankingOut",
+        "type": "object"
+      },
+      "ProgramSearchOut": {
+        "properties": {
+          "query": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Query"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/ProgramOptionOut"
+            },
+            "title": "Rows",
+            "type": "array"
+          },
+          "truncated": {
+            "title": "Truncated",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "query",
+          "truncated",
+          "rows"
+        ],
+        "title": "ProgramSearchOut",
+        "type": "object"
+      },
+      "ProvinceOut": {
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "school_count": {
+            "title": "School Count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name",
+          "school_count"
+        ],
+        "title": "ProvinceOut",
+        "type": "object"
+      },
+      "RankingRowOut": {
+        "properties": {
+          "department": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Department"
+          },
+          "foreign_language": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Foreign Language"
+          },
+          "is_211": {
+            "title": "Is 211",
+            "type": "boolean"
+          },
+          "is_985": {
+            "title": "Is 985",
+            "type": "boolean"
+          },
+          "is_self_drawn": {
+            "title": "Is Self Drawn",
+            "type": "boolean"
+          },
+          "political": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Political"
+          },
+          "province": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Province"
+          },
+          "rank": {
+            "title": "Rank",
+            "type": "integer"
+          },
+          "school_name": {
+            "title": "School Name",
+            "type": "string"
+          },
+          "source_file": {
+            "title": "Source File",
+            "type": "string"
+          },
+          "subject_one": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subject One"
+          },
+          "subject_two": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subject Two"
+          },
+          "total_score": {
+            "title": "Total Score",
+            "type": "number"
+          },
+          "unit_count": {
+            "title": "Unit Count",
+            "type": "integer"
+          },
+          "zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Zone"
+          }
+        },
+        "required": [
+          "school_name",
+          "rank",
+          "total_score",
+          "political",
+          "foreign_language",
+          "subject_one",
+          "subject_two",
+          "unit_count",
+          "department",
+          "province",
+          "zone",
+          "is_985",
+          "is_211",
+          "is_self_drawn",
+          "source_file"
+        ],
+        "title": "RankingRowOut",
+        "type": "object"
+      },
+      "ReachMatchSafetyOut": {
+        "properties": {
+          "coverage_warning": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Coverage Warning"
+          },
+          "disclaimer": {
+            "title": "Disclaimer",
+            "type": "string"
+          },
+          "program_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Program Code"
+          },
+          "program_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Program Name"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/ReachMatchSafetyRowOut"
+            },
+            "title": "Rows",
+            "type": "array"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          },
+          "window": {
+            "title": "Window",
+            "type": "integer"
+          },
+          "year_to": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year To"
+          }
+        },
+        "required": [
+          "year_to",
+          "window",
+          "score",
+          "program_code",
+          "program_name",
+          "coverage_warning",
+          "disclaimer",
+          "rows"
+        ],
+        "title": "ReachMatchSafetyOut",
+        "type": "object"
+      },
+      "ReachMatchSafetyRowOut": {
+        "properties": {
+          "band": {
+            "title": "Band",
+            "type": "string"
+          },
+          "department": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Department"
+          },
+          "is_211": {
+            "title": "Is 211",
+            "type": "boolean"
+          },
+          "is_985": {
+            "title": "Is 985",
+            "type": "boolean"
+          },
+          "is_self_drawn": {
+            "title": "Is Self Drawn",
+            "type": "boolean"
+          },
+          "lines": {
+            "items": {
+              "$ref": "#/components/schemas/ReachMatchSafetyYearLineOut"
+            },
+            "title": "Lines",
+            "type": "array"
+          },
+          "margin": {
+            "title": "Margin",
+            "type": "number"
+          },
+          "province": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Province"
+          },
+          "reference_line": {
+            "title": "Reference Line",
+            "type": "number"
+          },
+          "school_name": {
+            "title": "School Name",
+            "type": "string"
+          },
+          "source_file": {
+            "title": "Source File",
+            "type": "string"
+          },
+          "years_observed": {
+            "title": "Years Observed",
+            "type": "integer"
+          },
+          "zone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Zone"
+          }
+        },
+        "required": [
+          "school_name",
+          "band",
+          "margin",
+          "reference_line",
+          "years_observed",
+          "lines",
+          "department",
+          "province",
+          "zone",
+          "is_985",
+          "is_211",
+          "is_self_drawn",
+          "source_file"
+        ],
+        "title": "ReachMatchSafetyRowOut",
+        "type": "object"
+      },
+      "ReachMatchSafetyYearLineOut": {
+        "properties": {
+          "department": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Department"
+          },
+          "total_score": {
+            "title": "Total Score",
+            "type": "number"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "year",
+          "total_score",
+          "department"
+        ],
+        "title": "ReachMatchSafetyYearLineOut",
+        "type": "object"
+      },
+      "ScorePositionOut": {
+        "properties": {
+          "provisional_rank": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provisional Rank"
+          },
+          "schools_passing": {
+            "title": "Schools Passing",
+            "type": "integer"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          },
+          "total_schools": {
+            "title": "Total Schools",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "score",
+          "provisional_rank",
+          "schools_passing",
+          "total_schools"
+        ],
+        "title": "ScorePositionOut",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "考研择校 + 考公路径规划",
+    "version": "0.1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/kaoyan/admission-lines": {
+      "get": {
+        "operationId": "admission_lines_api_kaoyan_admission_lines_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "school",
+            "required": true,
+            "schema": {
+              "title": "School",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "program",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Program"
+            }
+          },
+          {
+            "in": "query",
+            "name": "degree_type",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Degree Type"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/AdmissionLineOut"
+                  },
+                  "title": "Response Admission Lines Api Kaoyan Admission Lines Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Admission Lines",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/ai-report": {
+      "post": {
+        "operationId": "ai_report_api_kaoyan_ai_report_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AiReportRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiReportOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Ai Report",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/cs408/conflicts": {
+      "get": {
+        "operationId": "cs408_conflicts_api_kaoyan_cs408_conflicts_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "school",
+            "required": true,
+            "schema": {
+              "title": "School",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Cs408ConflictOut"
+                  },
+                  "title": "Response Cs408 Conflicts Api Kaoyan Cs408 Conflicts Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Cs408 Conflicts",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/cs408/subject-changes": {
+      "get": {
+        "operationId": "cs408_subject_changes_api_kaoyan_cs408_subject_changes_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "school",
+            "required": true,
+            "schema": {
+              "title": "School",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Cs408SubjectChangeOut"
+                  },
+                  "title": "Response Cs408 Subject Changes Api Kaoyan Cs408 Subject Changes Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Cs408 Subject Changes",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/cs408/units": {
+      "get": {
+        "operationId": "cs408_units_api_kaoyan_cs408_units_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "school",
+            "required": true,
+            "schema": {
+              "title": "School",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_class",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Subject Class"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Cs408UnitOut"
+                  },
+                  "title": "Response Cs408 Units Api Kaoyan Cs408 Units Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Cs408 Units",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/cs408/year-lines": {
+      "get": {
+        "operationId": "cs408_year_lines_api_kaoyan_cs408_year_lines_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "school",
+            "required": true,
+            "schema": {
+              "title": "School",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Year"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Cs408YearLineOut"
+                  },
+                  "title": "Response Cs408 Year Lines Api Kaoyan Cs408 Year Lines Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Cs408 Year Lines",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/enrollment-plans": {
+      "get": {
+        "operationId": "enrollment_plans_api_kaoyan_enrollment_plans_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "school",
+            "required": true,
+            "schema": {
+              "title": "School",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "program",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Program"
+            }
+          },
+          {
+            "in": "query",
+            "name": "study_mode",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Study Mode"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/EnrollmentPlanOut"
+                  },
+                  "title": "Response Enrollment Plans Api Kaoyan Enrollment Plans Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Enrollment Plans",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/heat-ranking": {
+      "get": {
+        "operationId": "heat_ranking_api_kaoyan_heat_ranking_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "default": "net",
+              "pattern": "^(net|comp)$",
+              "title": "Sort",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "province",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Province"
+            }
+          },
+          {
+            "in": "query",
+            "name": "region",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Region"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_class",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Subject Class"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tier",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Tier"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeatRankingOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Heat Ranking",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/national-lines": {
+      "get": {
+        "operationId": "national_lines_api_kaoyan_national_lines_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Year"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Subject"
+            }
+          },
+          {
+            "in": "query",
+            "name": "kind",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Kind"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/NationalLineOut"
+                  },
+                  "title": "Response National Lines Api Kaoyan National Lines Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "National Lines",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/programs": {
+      "get": {
+        "operationId": "programs_api_kaoyan_programs_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramSearchOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Programs",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/provinces": {
+      "get": {
+        "operationId": "provinces_api_kaoyan_provinces_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ProvinceOut"
+                  },
+                  "title": "Response Provinces Api Kaoyan Provinces Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Provinces",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/rankings/program": {
+      "get": {
+        "operationId": "program_ranking_api_kaoyan_rankings_program_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "schema": {
+              "title": "Year",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "program_code",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Program Code"
+            }
+          },
+          {
+            "in": "query",
+            "name": "program_name",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Program Name"
+            }
+          },
+          {
+            "in": "query",
+            "name": "score",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Score"
+            }
+          },
+          {
+            "in": "query",
+            "name": "zone",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Zone"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_985",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Is 985"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_211",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Is 211"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_self_drawn",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Is Self Drawn"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramRankingOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Program Ranking",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    },
+    "/api/kaoyan/reach-match-safety": {
+      "get": {
+        "operationId": "reach_match_safety_api_kaoyan_reach_match_safety_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "score",
+            "required": true,
+            "schema": {
+              "title": "Score",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "year_to",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Year To"
+            }
+          },
+          {
+            "in": "query",
+            "name": "window",
+            "required": false,
+            "schema": {
+              "default": 3,
+              "title": "Window",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "program_code",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Program Code"
+            }
+          },
+          {
+            "in": "query",
+            "name": "program_name",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Program Name"
+            }
+          },
+          {
+            "in": "query",
+            "name": "province",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Province"
+            }
+          },
+          {
+            "in": "query",
+            "name": "zone",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Zone"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_985",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Is 985"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_211",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Is 211"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_self_drawn",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Is Self Drawn"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReachMatchSafetyOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Reach Match Safety",
+        "tags": [
+          "kaoyan"
+        ]
+      }
+    }
+  }
+}

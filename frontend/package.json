@@ -1,0 +1,33 @@
+{
+  "name": "exam-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "types:generate": "openapi-typescript ../backend/openapi.json -o src/api/schema.d.ts",
+    "types:check": "npm run types:generate && git -C .. diff --exit-code -- frontend/src/api/schema.d.ts",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run types:check && npm run typecheck && npm run test"
+  },
+  "dependencies": {
+    "element-plus": "^2.8.8",
+    "vue": "^3.5.13",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitest/ui": "^3.2.4",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "openapi-typescript": "^7.4.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^2.2.0"
+  }
+}
